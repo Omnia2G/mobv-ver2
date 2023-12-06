@@ -18,7 +18,6 @@ import eu.mcomputing.mobv.mobvzadanie.data.PreferenceData
 import eu.mcomputing.mobv.mobvzadanie.databinding.FragmentProfileBinding
 import eu.mcomputing.mobv.mobvzadanie.viewmodels.ProfileViewModel
 import eu.mcomputing.mobv.mobvzadanie.widgets.bottomBar.BottomBar
-
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
     private lateinit var viewModel: ProfileViewModel
     private var binding: FragmentProfileBinding? = null
@@ -82,6 +81,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                 }
             }
 
+
             viewModel.sharingLocation.postValue(
                 PreferenceData.getInstance().getSharing(requireContext())
             )
@@ -103,6 +103,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                 }
             }
 
+            //startActivity(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS))  //jump to gps settings
 
         }
     }
